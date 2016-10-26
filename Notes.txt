@@ -1,0 +1,5 @@
+Tutorials
+---------
+https://www.tutorialspoint.com/flask/flask_environment.htm
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+http://code.runnable.com/UhLMQLffO1YSAADK/handle-a-post-request-in-flask-for-python
