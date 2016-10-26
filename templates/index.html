@@ -18,10 +18,10 @@
       <p>Choose a scenario. Changes in variables SST, pH, O2 and productivity will be displayed below.</p>
 
       <form action = "/" method = "POST">			
-			<input type="radio" name="scenario" value="rcp2.6"> RCP 2.6
-	        <input type="radio" name="scenario" value="rcp4.5"> RCP 4.5
-	        <input type="radio" name="scenario" value="rcp6"> RCP 6.0
-	        <input type="radio" name="scenario" value="rcp8.5"> RCP 8.5
+			<input type="radio" id="id_RCP2_6" name="scenario" value="RCP2_6"> RCP 2.6
+	        <input type="radio" id="id_RCP4_5" name="scenario" value="RCP4_5"> RCP 4.5
+	        <input type="radio" id="id_RCP6_0" name="scenario" value="RCP6_0"> RCP 6.0
+	        <input type="radio" id="id_RCP8_5" name="scenario" value="RCP8_5"> RCP 8.5
         <br><br>
         <input type="submit" value="Submit" />
 	  </form>
@@ -30,6 +30,15 @@
 	  <p>{{message}}</p>
 
 	  {% if scenario: %}
+
+	  	{# After submit, radio buttons are cleared #}
+	  	{# Use javascript to check the appropriate button #}
+	  	<script type="text/jscript">	  		
+	  		var radioId = "id_" + "{{scenario}}"
+	  		console.log(radioId)		   
+		    document.getElementById(radioId).checked = true;
+		</script>
+
 	  	  <!-- Display map image -->
 	      <div id="id-sst">
 	        <img src="static/images/{{map1}}">
